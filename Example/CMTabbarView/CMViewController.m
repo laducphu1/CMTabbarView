@@ -45,8 +45,9 @@ static NSUInteger const kCMDefaultSelected = 0;
         _tabbarView.defaultSelectedIndex = kCMDefaultSelected;
         _tabbarView.indicatorScrollType = CMTabbarIndicatorScrollTypeSpring;
 //        _tabbarView.tabPadding = 5.0f;
-//        _tabbarView.selectionType = CMTabbarSelectionBox;
-        //_tabbarView.indicatorAttributes = @{CMTabIndicatorColor:[UIColor orangeColor]};
+        
+        _tabbarView.selectionType = CMTabbarSelectionBox;
+        _tabbarView.indicatorAttributes = @{CMTabIndicatorColor:[UIColor orangeColor]};
         //_tabbarView.normalAttributes = @{NSForegroundColorAttributeName:[UIColor blackColor]};
         //_tabbarView.selectedAttributes = @{NSForegroundColorAttributeName:[UIColor orangeColor]};
         //_tabbarView.needTextGradient = false;

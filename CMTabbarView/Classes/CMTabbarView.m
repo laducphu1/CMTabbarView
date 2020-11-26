@@ -103,9 +103,9 @@ NSString *  const CMTabBoxBackgroundColor = @"CMBoxbackgroundColor";
     _selectionType = CMTabbarSelectionIndicator;
     _locationType = CMTabbarIndicatorLocationDown;
     _contentInset = UIEdgeInsetsMake(.0f, CMTabbarViewDefaultHorizontalInset, 0, CMTabbarViewDefaultHorizontalInset);
-    _indicatorAttributes = @{CMTabIndicatorColor:CMHEXCOLOR(0xF2F2F2),CMTabIndicatorViewHeight:@(2.0f),CMTabBoxBackgroundColor:CMHEXCOLOR(0x3ebd6e)};
+    _indicatorAttributes = @{CMTabIndicatorColor:CMHEXCOLOR(0xF2F2F2),CMTabIndicatorViewHeight:@(2.0f),CMTabBoxBackgroundColor:CMHEXCOLOR(0xF2F2F2)};
     _normalAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15.0f],NSForegroundColorAttributeName:CMHEXCOLOR(0x6d7989)};
-    _selectedAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15.0f],NSForegroundColorAttributeName:CMHEXCOLOR(0x3ebd6e)};
+    _selectedAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15.0f],NSForegroundColorAttributeName:CMHEXCOLOR(0xF2F2F2)};
     _defaultSelectedIndex = 0;
     _needAutoCenter = true;
     _defaultFlag = -1;
@@ -173,7 +173,7 @@ NSString *  const CMTabBoxBackgroundColor = @"CMBoxbackgroundColor";
         _indicatorView = [UIView new];
         _indicatorView.userInteractionEnabled = false;
         _indicatorView.backgroundColor = _indicatorAttributes[CMTabIndicatorColor];
-        _indicatorView.layer.cornerRadius = 1.0f;
+        _indicatorView.layer.cornerRadius = 18.0f;
     }
     return _indicatorView;
 }
@@ -323,17 +323,17 @@ NSString *  const CMTabBoxBackgroundColor = @"CMBoxbackgroundColor";
     _selectionType = selectionType;
     if (selectionType == CMTabbarSelectionBox) {
         self.indicatorView.backgroundColor = [_indicatorAttributes[CMTabBoxBackgroundColor] colorWithAlphaComponent:0.6];
-        self.indicatorView.layer.cornerRadius = 3.0f;
+        self.indicatorView.layer.cornerRadius = 18.0f;
     } else if (selectionType == CMTabbarSelectionIndicator) {
         self.indicatorView.backgroundColor = _indicatorAttributes[CMTabIndicatorColor];
-        self.indicatorView.layer.cornerRadius = 1.0f;
+        self.indicatorView.layer.cornerRadius = 18.0f;
         self.indicatorView.layer.masksToBounds = true;
     }
 }
 
 - (void)setIndicatorAttributes:(NSDictionary *)indicatorAttributes
 {
-    NSDictionary *defaultAttributes = @{CMTabIndicatorColor:CMHEXCOLOR(0x3ebd6e),CMTabIndicatorViewHeight:@(2.0f),CMTabBoxBackgroundColor:[UIColor orangeColor]};
+    NSDictionary *defaultAttributes = @{CMTabIndicatorColor:CMHEXCOLOR(0xF2F2F2),CMTabIndicatorViewHeight:@(2.0f),CMTabBoxBackgroundColor:[UIColor orangeColor]};
     NSMutableDictionary *resultAttributes = [NSMutableDictionary dictionaryWithDictionary:defaultAttributes];
     [resultAttributes addEntriesFromDictionary:indicatorAttributes];
     _indicatorAttributes = [resultAttributes copy];
